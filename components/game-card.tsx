@@ -11,7 +11,7 @@ export interface GameCardProps
 const GameCard = React.forwardRef<HTMLButtonElement, GameCardProps>(
   ({ game, className, children, ...props }, ref) => {
     return (
-      <Link href={`/games/${game.title}`}>
+      <Link href={`/games/${game.url}`}>
         <button
           className={cn(
             "bento-box w-80 aspect-video flex flex-col gap-2",
