@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import * as Icons from "hugeicons-react";
+import * as Icons from "react-icons/fa";
 import Link from "next/link";
 import {
   Tooltip,
@@ -27,7 +27,7 @@ const AccountButton = React.forwardRef<HTMLButtonElement, AccountButtonProps>(
                 ref={ref}
                 {...props}>
                 {children}
-                <Icons.UserIcon />
+                <Icons.FaRegUser size={20} />
               </Button>
             </Link>
           </TooltipTrigger>

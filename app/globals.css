@@ -4,6 +4,11 @@
 
 @layer base {
   :root {
+    --eggshell: 52, 50%, 91%;
+    --burnt-sienna: 13, 68%, 63%;
+    --delft-blue: 234, 20%, 30%;
+    --cambridge-blue: 151, 24%, 60%;
+    --sunset: 37, 79%, 75%;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -60,21 +65,21 @@
     @apply font-extrabold uppercase text-lg;
   }
   h2 {
-    @apply font-semibold;
+    @apply font-bold;
   }
   h3 {
-    @apply font-semibold text-xl;
+    @apply font-bold text-xl;
   }
   h4 {
     @apply text-sm;
   }
   p {
-    @apply font-light tracking-tight leading-snug;
+    @apply font-medium tracking-tight leading-snug;
   }
 }
 
 @layer components {
   .bento-box {
-    @apply rounded-2xl bg-primary text-secondary transition-all p-4 hover:scale-105;
+    @apply rounded-2xl bg-primary transition-all p-6;
   }
 }
