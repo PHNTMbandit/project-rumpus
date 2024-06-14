@@ -23,6 +23,12 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
+        eggshell: "hsl(var(--eggshell))",
+        "burnt-sienna": "hsl(var(--burnt-sienna))",
+        "delft-blue": "hsl(var(--delft-blue))",
+        "cambridge-blue": "hsl(var(--cambridge-blue))",
+        "electric-blue": "hsl(var(--electric-blue))",
+        sunset: "hsl(var(--sunset))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

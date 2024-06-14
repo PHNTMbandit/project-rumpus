@@ -5,4 +5,5 @@ export type Game = {
   url: string;
   icon: IconType;
   description: string;
+  component: React.FC;
 };

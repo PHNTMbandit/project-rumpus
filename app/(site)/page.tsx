@@ -3,7 +3,7 @@ import { games } from "@/lib/games";
 
 export default async function SitePage() {
   return (
-    <div className="flex gap-4 p-4 flex-wrap place-self-start">
+    <div className="flex gap-4 mt-4 flex-wrap place-self-start">
       {Object.values(games).map((game, index) => (
         <GameCard
           key={index}

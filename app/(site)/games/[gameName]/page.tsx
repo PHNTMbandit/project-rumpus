@@ -6,5 +6,13 @@ export default function GamePage({ params }: { params: { gameName: string } }) {
     (game) => game.url == params.gameName
   );
 
-  return <>{game && <h2>{game.title}</h2>}</>;
+  return (
+    game && (
+      <section className="p-4">
+        <h2 className=" text-xl">{game.title}</h2>
+        <p>{game.description}</p>
+        <game.component />
+      </section>
+    )
+  );
 }

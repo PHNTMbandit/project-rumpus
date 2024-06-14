@@ -14,17 +14,17 @@ const GameCard = React.forwardRef<HTMLButtonElement, GameCardProps>(
       <Link href={`/games/${game.url}`}>
         <button
           className={cn(
-            "bento-box w-80 aspect-video flex flex-col gap-2",
+            "flex flex-col justify-between bento-box w-60 aspect-square bg-sunset background hover:scale-105",
             className
           )}
           ref={ref}
           {...props}>
           {children}
-          <div className="flex items-center justify-center gap-2">
-            <game.icon size={25} />
-            <h3>{game.title}</h3>
+          <game.icon size={80} />
+          <div>
+            <h3 className="text-left">{game.title}</h3>
+            <p className="text-left line-clamp-3 text-sm">{game.description}</p>
           </div>
-          <p className="text-left line-clamp-5">{game.description}</p>
         </button>
       </Link>
     );
