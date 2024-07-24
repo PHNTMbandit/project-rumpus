@@ -1,7 +1,5 @@
-export default function Login({
-  searchParams,
-}: {
-  searchParams: { message: string };
-}) {
-  return <>{searchParams.message}</>;
+import { LoginForm } from "@/components/forms/login-form";
+
+export default function LoginPage() {
+  return <LoginForm />;
 }

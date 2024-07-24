@@ -25,7 +25,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
           <h1>Project Rumpus</h1>
         </Link>
         <NavBar />
-        <div className="space-x-2 justify-self-end">
+        <div className="flex space-x-2 justify-self-end">
           <AccountButton />
           <ThemeToggle />
         </div>
