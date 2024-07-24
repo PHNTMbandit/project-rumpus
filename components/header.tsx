@@ -13,7 +13,7 @@ const Header = React.forwardRef<HTMLDivElement, HeaderProps>(
     return (
       <div
         className={cn(
-          "sticky top-0 grid grid-cols-3 items-center justify-items-center bento-box bg-eggshell",
+          "sticky top-0 grid grid-cols-3 items-center justify-items-center",
           className
         )}
         ref={ref}

@@ -6,7 +6,7 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full h-screen p-6">
+    <div className="w-full h-screen p-6 space-y-4">
       <Header />
       {children}
     </div>
