@@ -1,24 +1,27 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
-import { loginFormSchema } from "@/lib/schemas/login-form-schema";
-import { revalidatePath } from "next/cache";
+import { signupFormSchema } from "@/lib/schemas/signup-form-schema";
 
-export async function login(prevState: any, formData: FormData) {
+export async function signup(prevState: any, formData: FormData) {
   const supabase = createClient();
   const rawFormData = Object.fromEntries(formData);
-  const validation = loginFormSchema.safeParse(rawFormData);
+  const validation = signupFormSchema.safeParse(rawFormData);
 
   if (validation.success) {
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signUp({
       email: validation.data.email,
       password: validation.data.password,
+      options: {
+        data: {
+          username: validation.data.username,
+        },
+      },
     });
 
     if (error) {
       return { success: false, authError: error.message, validationErrors: [] };
     } else {
-      revalidatePath("/", "layout");
       return { success: true, authError: "", validationErrors: [] };
     }
   } else {

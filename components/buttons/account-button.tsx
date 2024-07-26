@@ -9,12 +9,29 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { createClient } from "@/utils/supabase/server";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export interface AccountButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const AccountButton = React.forwardRef<HTMLButtonElement, AccountButtonProps>(
-  ({ className, children, ...props }, ref) => {
+  async ({ className, children, ...props }, ref) => {
+    const supabase = createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user) {
+      return (
+        <Avatar>
+          <AvatarFallback>
+            {user.user_metadata["username"].slice(0, 2)}
+          </AvatarFallback>
+        </Avatar>
+      );
+    }
+
     return (
       <TooltipProvider>
         <Tooltip>
@@ -32,7 +49,7 @@ const AccountButton = React.forwardRef<HTMLButtonElement, AccountButtonProps>(
             </Link>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Sign In</p>
+            <p>Login</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

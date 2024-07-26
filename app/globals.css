@@ -71,10 +71,10 @@
     @apply font-bold text-xl;
   }
   h4 {
-    @apply text-sm;
+    @apply text-lg;
   }
   p {
-    @apply font-medium tracking-tight leading-snug;
+    @apply text-sm font-medium tracking-tight leading-snug;
   }
 }
 

@@ -1,17 +1,17 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Game } from "@/types/game";
 import Link from "next/link";
+import { Tables } from "@/types/supabase";
 
 export interface GameCardProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  game: Game;
+  game: Tables<"games">;
 }
 
 const GameCard = React.forwardRef<HTMLButtonElement, GameCardProps>(
   ({ game, className, children, ...props }, ref) => {
     return (
-      <Link href={`/games/${game.url}`}>
+      <Link href={`/games/${game.id.toString()}`}>
         <button
           className={cn(
             "flex flex-col justify-between bento-box w-60 aspect-square bg-sunset background hover:scale-105",
@@ -20,9 +20,8 @@ const GameCard = React.forwardRef<HTMLButtonElement, GameCardProps>(
           ref={ref}
           {...props}>
           {children}
-          <game.icon size={80} />
           <div>
-            <h3 className="text-left">{game.title}</h3>
+            <h3 className="text-left">{game.name}</h3>
             <p className="text-left line-clamp-3 text-sm">{game.description}</p>
           </div>
         </button>
