@@ -175,7 +175,7 @@ const SignupForm = React.forwardRef<HTMLFormElement, SignupFormProps>(
                 Log In
               </Link>
             </p>
-            <SubmitButton className="w-full">Sign up</SubmitButton>
+            <SubmitButton>Sign up</SubmitButton>
           </form>
         </Form>
       </>

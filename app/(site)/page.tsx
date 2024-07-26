@@ -1,10 +1,14 @@
 import { GameCard } from "@/components/game-card";
-import { games } from "@/lib/games";
+import { getGames } from "@/lib/games";
+import { createClient } from "@/utils/supabase/server";
 
 export default async function SitePage() {
+  const supabase = createClient();
+  const games = await getGames(supabase);
+
   return (
     <div className="flex gap-4 flex-wrap place-self-start">
-      {Object.values(games).map((game, index) => (
+      {games?.map((game, index) => (
         <GameCard
           key={index}
           game={game}

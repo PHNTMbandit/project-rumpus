@@ -17,7 +17,7 @@ const SubmitButton = React.forwardRef<HTMLButtonElement, SubmitButtonProps>(
       <Button
         disabled={pending}
         type="submit"
-        className={cn("", className)}
+        className={cn("w-full", className)}
         ref={ref}
         {...props}>
         {pending ? (
